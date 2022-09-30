@@ -5,7 +5,10 @@ using UnityEngine;
 public class Wheel : MonoBehaviour
 {
     // global variables
-    private Rigidbody wheelRb;
+    private Rigidbody rb;
+
+    public bool front;
+    public bool right;
 
     [Header("Suspension")]
     public float restLength;
@@ -24,13 +27,21 @@ public class Wheel : MonoBehaviour
 
     [Header("Wheels")]
     public float wheelDiameter;
+    public Transform visualWheel;
+    public float steerAngle;
+    public float frictionStatic;
+    public float frictionKinetic;
 
     private float wheelRadius;
+    private Vector3 localWheelVelocity;
+    private float fx;
+    private float fy;
+
 
 
     void Start()
     {
-        wheelRb = transform.parent.parent.GetComponent<Rigidbody>(); // use 2 ".parent"s because this script goes on the wheels, which are in the "wheels" object, which are a child of the car which has the rigidbody
+        rb = transform.parent.parent.GetComponent<Rigidbody>(); // use 2 ".parent"s because this script goes on the wheels, which are in the "wheels" object, which are a child of the car which has the rigidbody
 
         // calculations to get the more usefull versions of the paramaters
         wheelRadius = wheelDiameter/2;
@@ -38,7 +49,12 @@ public class Wheel : MonoBehaviour
         maxLength = restLength + springTravel;
     }
 
-    void FixedUpdate() // use fixedupdate instead of update so the time interval is consistent
+    void Update() {
+        // visualWheel.localRotation = Quaternion.Euler(transform.up * steerAngle);  // rotate according to the steering angle, is set by car.cs on the car object
+        transform.localRotation = Quaternion.Euler(transform.up * steerAngle);    
+    }
+
+    void FixedUpdate() // use fixedupdate instead of update for physics so the time interval is consistent
     {
         if (Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, maxLength + wheelRadius)) // see if the wheel would be touching the ground
         {
@@ -51,7 +67,19 @@ public class Wheel : MonoBehaviour
             damperForce = damperStiffness * springVelocity; // yep
             strutForce = (springForce + damperForce) * transform.up; // combine spring and damper forces, and convert to a vector
 
-            wheelRb.AddForceAtPosition(strutForce, hit.point); // apply the force
+            localWheelVelocity = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point)); // get the velocity of the wheel in local space
+            fx = Input.GetAxis("Vertical") * springForce * 0.5f; // calculate a sort of "thrust", will replace this with something else later
+            fy = localWheelVelocity.x * springForce; // simulate lateral friction on the wheel, again will replace this later
+
+            if (front)
+            {
+                rb.AddForceAtPosition(strutForce + (fy * -transform.right), hit.point); // apply the forces
+            } else
+            {
+                rb.AddForceAtPosition(strutForce + (fx * transform.forward) + (fy * -transform.right), hit.point); // apply the forces
+            }
+            
+            visualWheel.position = transform.position + new Vector3(0, 0.203f+wheelDiameter-springLength, 0); // move the visual wheel
         }
     }
 }
