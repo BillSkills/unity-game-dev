@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028462, g: 0.225715, b: 0.3069236, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731743, g: 0.1341475, b: 0.121078596, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -203,15 +203,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: 0
   right: 1
-  restLength: 0.8
+  restLength: 0.6
   springTravel: 0.2
   strutStiffness: 20000
   damperStiffness: 4000
   wheelDiameter: 0.3556
   visualWheel: {fileID: 203816127}
   steerAngle: 0
-  frictionStatic: 0
-  frictionKinetic: 0
+  frictionStatic: 0.4
+  frictionKinetic: 0.2
 --- !u!1 &668786336
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,15 +259,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: 1
   right: 0
-  restLength: 0.8
+  restLength: 0.6
   springTravel: 0.2
   strutStiffness: 20000
   damperStiffness: 4000
   wheelDiameter: 0.3556
   visualWheel: {fileID: 937270378}
   steerAngle: 0
-  frictionStatic: 0
-  frictionKinetic: 0
+  frictionStatic: 0.4
+  frictionKinetic: 0.2
 --- !u!1 &729673715
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,15 +381,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: 1
   right: 1
-  restLength: 0.8
+  restLength: 0.6
   springTravel: 0.2
   strutStiffness: 20000
   damperStiffness: 4000
   wheelDiameter: 0.3556
   visualWheel: {fileID: 729673716}
   steerAngle: 0
-  frictionStatic: 0
-  frictionKinetic: 0
+  frictionStatic: 0.4
+  frictionKinetic: 0.2
 --- !u!1 &1153415353
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +429,7 @@ Light:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1153415353}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
@@ -517,6 +517,100 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1416407211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416407212}
+  - component: {fileID: 1416407213}
+  m_Layer: 0
+  m_Name: Right Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1416407212
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416407211}
+  m_LocalRotation: {x: 0.9753597, y: 0, z: 0, w: 0.2206209}
+  m_LocalPosition: {x: 0.01027, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6024771103813324907}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 154.509, y: 0, z: 0}
+--- !u!108 &1416407213
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416407211}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 100
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &1488616742
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,15 +823,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: 0
   right: 0
-  restLength: 0.8
+  restLength: 0.6
   springTravel: 0.2
   strutStiffness: 20000
   damperStiffness: 4000
   wheelDiameter: 0.3556
   visualWheel: {fileID: 1488616743}
   steerAngle: 0
-  frictionStatic: 0
-  frictionKinetic: 0
+  frictionStatic: 0.4
+  frictionKinetic: 0.2
 --- !u!1 &2011235540
 GameObject:
   m_ObjectHideFlags: 0
@@ -822,6 +916,100 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!1 &2132468151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2132468152}
+  - component: {fileID: 2132468153}
+  m_Layer: 0
+  m_Name: Left Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2132468152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132468151}
+  m_LocalRotation: {x: 0.9753597, y: 0, z: 0, w: 0.2206209}
+  m_LocalPosition: {x: -0.00041, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6024771103813324907}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 154.509, y: 0, z: 0}
+--- !u!108 &2132468153
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132468151}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1
+  m_Range: 100
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!4 &39830521704057521
 Transform:
   m_ObjectHideFlags: 0
@@ -1544,6 +1732,9 @@ MonoBehaviour:
   wheelBase: 2.4
   trackWidth: 1.565
   turningRadius: 8
+  headlights: {fileID: 9188729832918442398}
+  dragHeadlightsDown: 0
+  dragHeadlightsUp: 0
 --- !u!33 &5681145110856971596
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1604,14 +1795,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9188729832918442397}
-  m_LocalRotation: {x: 0.53368425, y: -0, z: -0, w: -0.8456839}
-  m_LocalPosition: {x: -0.0048348675, y: -0.017847026, z: 0.0073421546}
+  m_LocalRotation: {x: -0.5336809, y: 0, z: 0, w: 0.84568596}
+  m_LocalPosition: {x: -0.0048348666, y: -0.017847018, z: 0.0073421523}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2132468152}
+  - {fileID: 1416407212}
   m_Father: {fileID: 8851470229579380280}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -64.509, y: 0, z: 0}
 --- !u!23 &6624282658877299642
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1918,6 +2111,7 @@ GameObject:
   - component: {fileID: 6024771103813324907}
   - component: {fileID: 6902662258081552924}
   - component: {fileID: 5345946366403573304}
+  - component: {fileID: 9188729832918442398}
   m_Layer: 0
   m_Name: Headlights
   m_TagString: Untagged
@@ -1925,6 +2119,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &9188729832918442398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9188729832918442397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cd66430c3b1334d9fca6f55d4eab39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onIntensity: 5
+  targetOn: 0
+  on: 0
+  onAngle: -64.509
+  offAngle: 0.78
+  angle: 0
 --- !u!33 &9221655715524327632
 MeshFilter:
   m_ObjectHideFlags: 0

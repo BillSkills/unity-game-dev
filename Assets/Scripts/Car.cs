@@ -16,9 +16,22 @@ public class Car : MonoBehaviour
     private float steerRight;
     private float steerLeft;
 
+    [Header("Headlights")]
+    public Headlights headlights;
+    [Header("Drag")]
+    public float dragHeadlightsDown;
+    public float dragHeadlightsUp;
+
     void Update()
     {
         Steer();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            headlights.targetOn = !headlights.targetOn; // toggle the headlights when the q key gets pressed
+        }
+
+        
     }
 
     void Steer()
