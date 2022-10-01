@@ -1733,8 +1733,8 @@ MonoBehaviour:
   trackWidth: 1.565
   turningRadius: 8
   headlights: {fileID: 9188729832918442398}
-  dragHeadlightsDown: 0
-  dragHeadlightsUp: 0
+  dragHeadlightsDown: 0.35
+  dragHeadlightsUp: 0.39
 --- !u!33 &5681145110856971596
 MeshFilter:
   m_ObjectHideFlags: 0

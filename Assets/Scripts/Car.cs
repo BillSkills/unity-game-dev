@@ -5,6 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
 
+    private Rigidbody rb;
     public Wheel[] wheels;
 
     [Header("Dimentions")]
@@ -22,6 +23,10 @@ public class Car : MonoBehaviour
     public float dragHeadlightsDown;
     public float dragHeadlightsUp;
 
+    private void Start() {
+        rb = GetComponent<Rigidbody>();
+    }
+
     void Update()
     {
         Steer();
@@ -31,7 +36,14 @@ public class Car : MonoBehaviour
             headlights.targetOn = !headlights.targetOn; // toggle the headlights when the q key gets pressed
         }
 
-        
+        if (headlights.on)
+        {
+            rb.drag = dragHeadlightsUp;
+        } else {
+            rb.drag = dragHeadlightsDown;
+        }
+
+
     }
 
     void Steer()
