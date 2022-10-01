@@ -31,11 +31,6 @@ public class Car : MonoBehaviour
     {
         Steer();
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            headlights.targetOn = !headlights.targetOn; // toggle the headlights when the q key gets pressed
-        }
-
         if (headlights.on)
         {
             rb.drag = dragHeadlightsUp;
