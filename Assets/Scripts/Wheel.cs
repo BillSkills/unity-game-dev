@@ -23,14 +23,18 @@ public class Wheel : MonoBehaviour
     private float springForce;
     private float springVelocity;
     private float damperForce;
-    private Vector3 strutForce;
+    private Vector3 strutForceVector;
+    private float strutForce;
 
     [Header("Wheels")]
     public float wheelDiameter;
     public Transform visualWheel;
+    public float offsetY;
     public float steerAngle;
     public float frictionStatic;
     public float frictionKinetic;
+    public float maxGrip;
+    public bool isSlipping;
 
     private float wheelRadius;
     private Vector3 localWheelVelocity;
@@ -47,6 +51,8 @@ public class Wheel : MonoBehaviour
         wheelRadius = wheelDiameter / 2;
         minLength = restLength - springTravel;
         maxLength = restLength + springTravel;
+
+        maxGrip = frictionStatic;
     }
 
     void Update()
@@ -65,22 +71,24 @@ public class Wheel : MonoBehaviour
             springVelocity = (previousSpringLength - springLength) / Time.fixedDeltaTime; // calculate velocity of the spring, literally delta d / delta t
             springForce = strutStiffness * (restLength - springLength); // calculate the force the spring is applying by hooke's law
             damperForce = damperStiffness * springVelocity; // yep
-            strutForce = (springForce + damperForce) * transform.up; // combine spring and damper forces, and convert to a vector
+            strutForce = springForce + damperForce;
+            strutForceVector = strutForce * transform.up; // combine spring and damper forces, and convert to a vector
 
             localWheelVelocity = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point)); // get the velocity of the wheel in local space
-            fx = Input.GetAxis("Vertical") * springForce; // calculate a sort of "thrust", will replace this with something else later
-            fy = localWheelVelocity.x * springForce; // simulate lateral friction on the wheel, again will replace this later
 
-            if (front)
-            {
-                rb.AddForceAtPosition(strutForce + (fy * -transform.right), hit.point); // apply the forces
-            }
-            else
-            {
-                rb.AddForceAtPosition(strutForce + (fx * transform.forward) + (fy * -transform.right), hit.point); // apply the forces
-            }
+            fx = (!front)? Input.GetAxis("Vertical") * strutForce: 0; // calculate a sort of "thrust", will replace this with something else later
+            fy = localWheelVelocity.x * strutForce; // simulate lateral friction on the wheel, again will replace this later
 
-            visualWheel.position = transform.position + new Vector3(0, wheelDiameter-springLength, 0); // move the visual wheel
+            isSlipping = Mathf.Sqrt(fx*fx + fy*fy)>maxGrip; // figure out if the wheels are slipping
+            maxGrip = (isSlipping)? frictionKinetic*strutForce: frictionStatic*strutForce; 
+
+            fy = Mathf.Clamp(fy, -maxGrip, maxGrip); // limit forces as to not exceed grip
+            fx = Mathf.Clamp(fx, -maxGrip, maxGrip);
+
+        
+            rb.AddForceAtPosition(strutForceVector + (fx * transform.forward) + (fy * -transform.right), hit.point); // apply the forces
+
+            visualWheel.position = transform.position + new Vector3(0, wheelDiameter-springLength+offsetY, 0); // move the visual wheel
         }
     }
 }

@@ -6,7 +6,7 @@ public class Car : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public Wheel[] wheels;
+    public Wheel[] steeringWheels;
 
     [Header("Dimentions")]
     public float wheelBase;
@@ -23,7 +23,8 @@ public class Car : MonoBehaviour
     public float dragHeadlightsDown;
     public float dragHeadlightsUp;
 
-    private void Start() {
+    private void Start()
+    {
         rb = GetComponent<Rigidbody>();
     }
 
@@ -34,7 +35,9 @@ public class Car : MonoBehaviour
         if (headlights.on)
         {
             rb.drag = dragHeadlightsUp;
-        } else {
+        }
+        else
+        {
             rb.drag = dragHeadlightsDown;
         }
 
@@ -61,18 +64,15 @@ public class Car : MonoBehaviour
             steerLeft = 0;
         }
 
-        foreach (Wheel wheel in wheels)
+        foreach (Wheel wheel in steeringWheels)
         {
-            if (wheel.front)
+            if (wheel.right)
             {
-                if (wheel.right)
-                {
-                    wheel.steerAngle = steerRight;
-                }
-                else
-                {
-                    wheel.steerAngle = steerLeft;
-                }
+                wheel.steerAngle = steerRight;
+            }
+            else
+            {
+                wheel.steerAngle = steerLeft;
             }
         }
     }

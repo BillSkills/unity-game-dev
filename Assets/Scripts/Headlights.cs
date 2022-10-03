@@ -11,6 +11,7 @@ public class Headlights : MonoBehaviour
     public float offAngle;
     public AudioClip onSound;
     public AudioClip offSound;
+    public float volume;
 
     public float angle;
     private float targetAngle;
@@ -62,12 +63,12 @@ public class Headlights : MonoBehaviour
         if (targetOn)
         {
             targetAngle = onAngle;
-            audioSource.PlayOneShot(onSound);
+            audioSource.PlayOneShot(onSound, volume);
         }
         else
         {
             targetAngle = offAngle;
-            audioSource.PlayOneShot(offSound);
+            audioSource.PlayOneShot(offSound, volume);
         }
     }
 }

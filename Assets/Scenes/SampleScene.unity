@@ -146,8 +146,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203816126}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0370003, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461961586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7095003, y: 0.203, z: -1.193696}
+  m_LocalPosition: {x: 0.6725, y: 0.203, z: -1.193696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -210,8 +210,10 @@ MonoBehaviour:
   wheelDiameter: 0.3556
   visualWheel: {fileID: 203816127}
   steerAngle: 0
-  frictionStatic: 0.4
-  frictionKinetic: 0.2
+  frictionStatic: 1
+  frictionKinetic: 0.8
+  maxGrip: 0
+  isSlipping: 0
 --- !u!1 &668786336
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,7 +239,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 668786336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7095003, y: 0.203, z: 1.195383}
+  m_LocalPosition: {x: -0.6775, y: 0.203, z: 1.195383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -266,8 +268,10 @@ MonoBehaviour:
   wheelDiameter: 0.3556
   visualWheel: {fileID: 937270378}
   steerAngle: 0
-  frictionStatic: 0.4
-  frictionKinetic: 0.2
+  frictionStatic: 1
+  frictionKinetic: 0.8
+  maxGrip: 0
+  isSlipping: 0
 --- !u!1 &729673715
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,8 +295,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729673715}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.032000303, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -324,8 +328,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937270377}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.032000303, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -359,7 +363,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041572156}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7095003, y: 0.203, z: 1.1953832}
+  m_LocalPosition: {x: 0.6775, y: 0.203, z: 1.1953832}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -388,8 +392,10 @@ MonoBehaviour:
   wheelDiameter: 0.3556
   visualWheel: {fileID: 729673716}
   steerAngle: 0
-  frictionStatic: 0.4
-  frictionKinetic: 0.2
+  frictionStatic: 1
+  frictionKinetic: 0.8
+  maxGrip: 0
+  isSlipping: 0
 --- !u!1 &1153415353
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1488616742}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0370003, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -801,7 +807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862328008}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.00452, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -929,7 +935,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1985450780}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7095003, y: 0.203, z: -1.193696}
+  m_LocalPosition: {x: -0.6725, y: 0.203, z: -1.193696}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -958,8 +964,10 @@ MonoBehaviour:
   wheelDiameter: 0.3556
   visualWheel: {fileID: 1488616743}
   steerAngle: 0
-  frictionStatic: 0.4
-  frictionKinetic: 0.2
+  frictionStatic: 1
+  frictionKinetic: 0.8
+  maxGrip: 0
+  isSlipping: 0
 --- !u!1 &2011235540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,17 +1860,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ea578d7a93ace43b52ca1bdf24a714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wheels:
+  steeringWheels:
   - {fileID: 668786338}
   - {fileID: 1041572158}
-  - {fileID: 1985450782}
-  - {fileID: 461961588}
   wheelBase: 2.4
   trackWidth: 1.565
   turningRadius: 8
   headlights: {fileID: 9188729832918442398}
   dragHeadlightsDown: 0.35
-  dragHeadlightsUp: 0.39
+  dragHeadlightsUp: 0.37
 --- !u!33 &5681145110856971596
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2267,6 +2273,7 @@ MonoBehaviour:
   offAngle: 0.78
   onSound: {fileID: 8300000, guid: 7cba7fd490491894aa20bf843fd1075d, type: 3}
   offSound: {fileID: 8300000, guid: 9439876cb8b69404ca8ba565f3c30ce0, type: 3}
+  volume: 10
   angle: 0
 --- !u!33 &9221655715524327632
 MeshFilter:
