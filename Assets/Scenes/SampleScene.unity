@@ -1740,6 +1740,7 @@ GameObject:
   - component: {fileID: 5532617114072995229}
   - component: {fileID: 5532617114072995230}
   - component: {fileID: 5532617114072995231}
+  - component: {fileID: 5532617114072995232}
   m_Layer: 0
   m_Name: AE86
   m_TagString: Untagged
@@ -1873,6 +1874,29 @@ MonoBehaviour:
   headlights: {fileID: 9188729832918442398}
   dragHeadlightsDown: 0.35
   dragHeadlightsUp: 0.37
+--- !u!114 &5532617114072995232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5155527968770035495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d532f348cdd95547b9d9cef2c481a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  driveWheels:
+  - {fileID: 1985450782}
+  - {fileID: 461961588}
+  redLine: 0
+  gearRatios:
+  - 3.587
+  - 2.022
+  - 1.384
+  - 1
+  - 0.861
+  differentialRatio: 4.3
 --- !u!33 &5681145110856971596
 MeshFilter:
   m_ObjectHideFlags: 0

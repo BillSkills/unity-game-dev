@@ -77,7 +77,7 @@ public class Wheel : MonoBehaviour
             localWheelVelocity = transform.InverseTransformDirection(rb.GetPointVelocity(hit.point)); // get the velocity of the wheel in local space
 
             fx = (!front)? Input.GetAxis("Vertical") * strutForce: 0; // calculate a sort of "thrust", will replace this with something else later
-            fy = localWheelVelocity.x * strutForce; // simulate lateral friction on the wheel, again will replace this later
+            fy = localWheelVelocity.x * strutForce; // simulate lateral friction on the wheel
 
             isSlipping = Mathf.Sqrt(fx*fx + fy*fy)>maxGrip; // figure out if the wheels are slipping
             maxGrip = (isSlipping)? frictionKinetic*strutForce: frictionStatic*strutForce; 

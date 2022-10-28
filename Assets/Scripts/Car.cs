@@ -66,14 +66,8 @@ public class Car : MonoBehaviour
 
         foreach (Wheel wheel in steeringWheels)
         {
-            if (wheel.right)
-            {
-                wheel.steerAngle = steerRight;
-            }
-            else
-            {
-                wheel.steerAngle = steerLeft;
-            }
+            if (wheel.right) wheel.steerAngle = steerRight;
+            else wheel.steerAngle = steerLeft;
         }
     }
 }
